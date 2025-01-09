@@ -621,3 +621,15 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+.video-banner {
+    position: relative;
+    width: 100%; /* Full-width container */
+    overflow: hidden; /* Ensures no overflow outside the container */
+  }
+
+  .hero-video {
+    width: 100%; /* Full width */
+    height: 75vh; /* 70% of the viewport height */
+    object-fit: cover;
+  }
