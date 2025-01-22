@@ -66,6 +66,7 @@
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
+        autoplayTimeout: 10000,
         center: true,
         dots: false,
         loop: true,
