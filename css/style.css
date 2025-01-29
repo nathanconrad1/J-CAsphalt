@@ -64,7 +64,7 @@ h1, h2, .main-title {
 }
 
 /* Subtitles (All Caps by Default) */
-h3, .subtitle {
+h3, h4, h5, .subtitle {
     font-family: "Loos Wide", sans-serif;
     text-transform: uppercase;
 }
@@ -743,3 +743,14 @@ button:hover, .btn:hover {
     height: 75vh; /* 70% of the viewport height */
     object-fit: cover;
   }
+
+  .navbar-brand img {
+    max-height: 100px; /* Adjust this to match your navbar's height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.owl-carousel .owl-item img {
+    max-height: 70px; /* Adjust this to match your navbar's height */
+    width: auto;
+    justify-content: center;
+}
