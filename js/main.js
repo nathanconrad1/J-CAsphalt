@@ -56,6 +56,26 @@
     ],
   });
 
+  document.querySelectorAll(".read-more").forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("popup-img").src = this.dataset.img;
+      document.getElementById("popup-title").textContent = this.dataset.title;
+      document.getElementById("popup-desc").textContent = this.dataset.desc;
+      document.getElementById("popup-modal").style.display = "flex";
+    });
+  });
+
+  document.querySelector(".close-btn").addEventListener("click", function () {
+    document.getElementById("popup-modal").style.display = "none";
+  });
+
+  window.onclick = function (event) {
+    if (event.target === document.getElementById("popup-modal")) {
+      document.getElementById("popup-modal").style.display = "none";
+    }
+  };
+
   // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
@@ -89,7 +109,7 @@
     });
 
     // Default to "New" filter
-    portfolioIsotope.isotope({ filter: '.new' });
+    portfolioIsotope.isotope({ filter: ".new" });
 
     $("#portfolio-flters li").on("click", function () {
       $("#portfolio-flters li").removeClass("active");
@@ -104,5 +124,4 @@
         portfolioIsotope.isotope("layout");
       });
   });
-
 })(jQuery);
