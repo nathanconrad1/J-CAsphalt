@@ -56,6 +56,24 @@
     ],
   });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector("#navbarCollapse");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // Close navbar when a nav-link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            if (navbarCollapse.classList.contains("show")) {
+                navbarToggler.click(); // Simulate toggle button click to close menu
+            }
+        });
+    });
+});
+
+
+
   document.querySelectorAll(".read-more").forEach((button) => {
     button.addEventListener("click", function (event) {
       event.preventDefault();
