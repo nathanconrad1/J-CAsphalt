@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/J&C Logo PNGs/Logo_J&C_Simple_Orange.png" rel="icon">
+    <link href="img/J & C delivered/jcFavIcon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,7 @@
                 <a href="#about" class="nav-item nav-link">About</a>
                 <a href="#services" class="nav-item nav-link">Services</a>
                 <a href="#projects" class="nav-item nav-link">Projects</a>
-                <a href="#testimonials" class="nav-item nav-link">testimonials</a>
+                <!-- <a href="#testimonials" class="nav-item nav-link">testimonials</a> -->
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-up m-0">
@@ -102,7 +102,7 @@
                 </div> -->
                 <a href="#quote" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="#quote" class="btn btn-primary py-4 px-lg-4 d-none d-lg-block" style="height: 50%; margin-right: 10px;">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="#quote" class="btn btn-primary py-4 px-lg-4 d-none d-lg-block" style="height: 50%; margin-right: 10px; margin-left: 30px;">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -344,8 +344,8 @@
                         <div class="row g-4">
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-check fa-2x text-primary"></i>
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white feature-box">
+                                        <h1 class="feature-numbers">1</h1>
                                     </div>
                                     <div class="ms-4">
                                         <p class="mb-2">Trustworthy</p>
@@ -355,8 +355,8 @@
                             </div>
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-user-check fa-2x text-primary"></i>
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white feature-box">
+                                        <h1 class="feature-numbers">2</h1>
                                     </div>
                                     <div class="ms-4">
                                         <p class="mb-2">Quality</p>
@@ -366,8 +366,8 @@
                             </div>
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-drafting-compass fa-2x text-primary"></i>
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white feature-box">
+                                        <h1 class="feature-numbers">3</h1>
                                     </div>
                                     <div class="ms-4">
                                         <p class="mb-2">Caring</p>
@@ -377,8 +377,8 @@
                             </div>
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                        <i class="fa fa-headphones fa-2x text-primary"></i>
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white feature-box">
+                                        <h1 class="feature-numbers">4</h1>
                                     </div>
                                     <div class="ms-4">
                                         <p class="mb-2">Professional</p>
@@ -556,9 +556,22 @@
                                         <option value="Land Clearing">Land Clearing</option>
                                     </select>
                                 </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="address" class="form-control border-0" 
+                                           placeholder="Project Address" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="measurements" class="form-control border-0" 
+                                           placeholder="Project Measurements" style="height: 55px;" >
+                                </div>
                                 <div class="col-12">
                                     <textarea name="message" class="form-control border-0" 
-                                              placeholder="Special Note" required></textarea>
+                                              placeholder="Special Note"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="project-file" class="form-label">Upload a picture or document of your project</label>
+                                    <input type="file" name="project_file" id="project-file" 
+                                           class="form-control border-0" accept=".jpg, .jpeg, .png, .pdf" >
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
@@ -694,7 +707,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 <div id="testimonials" class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="section-title text-center">
-            <h1 class="display-5 mb-5">Testimonial</h1>
+            <h1 class="display-5 mb-5">What Our Clients Have to Say</h1>
         </div>
         <div class="owl-carousel testimonial-carousel">
             <div class="testimonial-item">
