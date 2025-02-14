@@ -58,7 +58,9 @@
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+4354064640</small>
+                    <a href="tel:+4354064640" class="text-decoration-none text-dark">
+                        <small>+4354064640</small>
+                    </a>
                 </div>
                 <!-- <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -128,7 +130,9 @@
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">Where quality meets community</h5>
                                 
                                 <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p> -->
-                                <a href="#quote" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
+                                <a href="tel:+4354064640" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                    Call Now
+                                </a>
 
                             </div>
                         </div>
@@ -585,9 +589,9 @@
         </div>
     </div>
 
-    <script>
+<script>
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); // Prevent default form submission
 
     const formData = new FormData(event.target);
     const payload = Object.fromEntries(formData.entries());
@@ -595,8 +599,32 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     payload['to'] = 'luckylaynestudio@gmail.com';
     payload['subject'] = 'Test J&C Website Form Submission';
 
-    // Replace with your actual API Gateway URL
-    const apiURL = 'https://gdr53s69nh.execute-api.us-east-2.amazonaws.com/prod/contact';
+    // Handle file upload
+    const fileInput = document.getElementById('project-file');
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = async function () {
+            payload['project_file'] = {
+                fileName: file.name,
+                fileType: file.type,
+                fileData: reader.result.split(',')[1] // Extract base64 data
+            };
+
+            // Send the request after file is read
+            sendFormData(payload);
+        };
+
+        reader.readAsDataURL(file); // Convert file to Base64
+    } else {
+        // No file uploaded, send form without file
+        sendFormData(payload);
+    }
+});
+
+async function sendFormData(payload) {
+    const apiURL = 'https://gdr53s69nh.execute-api.us-east-2.amazonaws.com/prod/contact'; // Your API Gateway URL
 
     try {
         const response = await fetch(apiURL, {
@@ -609,17 +637,17 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
         const result = await response.json();
 
-        
         if (response.ok) {
-          window.location.href = '/thankyou.html'; // Display a success message
+            window.location.href = '/thankyou.html'; // Redirect on success
         } else {
-            alert(result.message || 'Failed to send email.'); // Display an error message
+            alert(result.message || 'Failed to send email.'); // Show error message
         }
     } catch (error) {
         console.error('Error:', error);
         alert('Failed to send email. Please try again later.');
     }
-});
+}
+
 </script>
     
     <!-- Quote End -->
@@ -771,7 +799,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
                 <div class="col-lg-4 col-md-12">
                     <h4 class="text-light mb-4">Address</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Provo, Utah</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+4354064640</p>
+                    <p class="mb-2">
+                        <i class="fa fa-phone-alt me-3"></i>
+                        <a href="tel:+4354064640" class="text-light text-decoration-none">+4354064640</a>
+                    </p>
+                    
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>jcasphalt.contracting@gmail.com</p>
                     <div class="d-flex pt-2">
                         <!-- <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/1YeZ7wJr6i/?mibextid=wwXIfr"><i class="fab fa-twitter"></i></a> -->
